@@ -24,10 +24,10 @@
             <h2>Вставай, чемпион! Погнали!</h2>
             <p>Crossathlon - крутой забег с препятствиями в твоем городе: драйв, поддержка и уверенность для каждого! Участники мероприятия преодолевают полосу препятствий, разработанную профессиональными инженерами и опытными инструкторами.</p>
           </div>
-          <video autoplay="true" loop="true">
+          <video controls autoplay="true" loop>
             <source src="/public/pictures/afishavid.mp4" type="video/mp4">
         </video>
-        <button class="button">Принять участие</button>
+        <button id="register" class="button">Принять участие</button>
         </section>
         <section class="participation solo">
           <h2>Участвуй!</h2>
@@ -51,26 +51,42 @@
             </div>
             <div class="item item--medium">
             </div>
-            <div class="item item--large">
+            <div class="item item--large none">
             </div>
             <div class="item">
             </div>
-            <div class="item item--medium">
-            </div>
-            <div class="item item--large">
-            </div>
-            <div class="item">
-            </div>
-            <div class="item item--medium">
-            </div>
-            <div class="item item--medium">
-            </div>
-            <div class="item item--large">
-            </div>
-            <div class="item">
             </div>
           </div>
         </div>
+      </section>
+      <section class="content signup">
+        <h2>Прими Участие!</h2>
+        <section class="signup_description">
+          <iframe src="https://vk.com/video_ext.php?oid=-183320535&id=456239017&hash=f25c57b4e9874d28&hd=2" width="653" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
+          <section>
+            <div class="timer">
+              <p id="days" class="timer_number"></p>
+              <span>:</span>
+              <p id="hours" class="timer_number"></p>
+              <span>:</span>
+              <p id="mins" class="timer_number"></p>
+              <span>:</span>
+              <p id="secs" class="timer_number"></p>
+              <h2 id="end" class="timer_number"></h2>
+            </div>
+            <div class="route">
+              Маршрут мероприятия
+            </div>
+          </section>
+          <form action="">
+            <h2>Регистрация</h2>
+            <input type="text" placeholder="Имя" />
+            <input type="text" placeholder="Фамилия" />
+            <input type="email" placeholder="e-mail" />
+            <input type="text" placeholder="Телефон" />
+            <button class="button">Отправить</button>
+          </form>
+        </section>
       </section>
     </main>
     <footer>

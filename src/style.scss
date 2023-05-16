@@ -35,6 +35,7 @@
 display: flex;
 gap: 15px;
 margin-bottom: 50px;
+flex-wrap: wrap;
 }
 
 .afisha_logo {
@@ -86,9 +87,13 @@ border-radius: 15px;
   border: none;
   font-size: 1.5em;
   border-radius: 5px;
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .participation {
@@ -151,10 +156,143 @@ footer {
   font-size: 2.5em;
 }
 
-@media screen and (max-width: 1279px) {
+
+.signup {
+  &_description {
+    display: flex;
+    gap: 15px;
+  }
+  
+  iframe {
+    border-radius: 15px;
+  }
+}
+
+section h2 {
+  margin-bottom: 20px;
+}
+.timer {
+  display: flex;
+  width: 500px;
+  justify-content: space-around;
+  font-size: 3em;
+  padding: 25px;
+  height: fit-content;
+  border-radius: 15px;
+  background-color: #26272b;
+  color: #dedede;
+  padding-bottom: 45px;
+
+  
+
+  p {
+    position: relative;
+    
+    &:first-child {
+      &:after {
+        content: 'Дни';
+        position: absolute;
+        top: 55px;
+        font-size: 0.5em;
+        right: -5px
+      }
+      
+      }
+      &:nth-child(3) {
+        &:after {
+          content: 'Часы';
+          position: absolute;
+          top: 55px;
+          font-size: 0.5em;
+          right: -20px
+        }
+      }
+      &:nth-child(5) {
+        &:after {
+          content: 'Минуты';
+          position: absolute;
+          top: 55px;
+          font-size: 0.5em;
+          right: -20px
+        }
+      }
+      &:nth-child(7) {
+        &:after {
+          content: 'Секунды';
+          position: absolute;
+          top: 55px;
+          font-size: 0.5em;
+          right: -35px
+        }
+      }
+  }
+}
+
+.route {
+  background-color: #85FFBD;
+background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+border-radius: 15px;
+padding: 25px;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.signup_description {
+  margin-bottom: 50px;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  border-radius: 15px;
+  gap: 15px;
+  padding: 15px;
+
+  input {
+    padding: 5px;
+    outline: 0;
+    border-radius: 5px;
+
+  }
+
+}
+
+@media screen and (max-width: 1300px) {
   .footer {
     flex-direction: column;
     gap: 15px;
   }
-  
+  .signup_description {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  form {
+    flex-grow: 1;
+  }
+  header {
+    h1 {
+      text-align: center;
+    }
+  }
+  .afisha {
+    justify-content: center;
+  }
+  .participation {
+    height: 500px;
+  }
+
 }

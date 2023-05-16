@@ -30,7 +30,7 @@
   background:  url('../public/pictures/pic2.jpg');
   background-size: cover;
   background-position: center;
-  box-shadow: -2px 2px 10px 0px rgba(#444, 0.4);
+ 
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
   counter-increment: item-counter;
@@ -51,7 +51,7 @@
   &:nth-of-type(6n) {
     background-image: url('../public/pictures/pic2.jpg');
   }
-  
+
   &:after {
     content: '';
     position: absolute;
@@ -104,4 +104,8 @@
       color: #444;
     }
   }
+}
+
+.none {
+  display: none;
 }
