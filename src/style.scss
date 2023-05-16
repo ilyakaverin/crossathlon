@@ -1,0 +1,160 @@
+@import './grid.scss';
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../public/fonts/Roboto-Regular.ttf") format("ttf"),
+    url("../public/fonts/Roboto-Regular.woff") format("woff"),
+    url("../public/fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bebas";
+  src: url("../public/fonts/BebasNeue-Regular.ttf") format("ttf"),
+    url("../public/fonts/BebasNeue-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+* {
+  font-family: "Bebas", "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+
+}
+.afisha {
+display: flex;
+gap: 15px;
+margin-bottom: 50px;
+}
+
+.afisha_logo {
+  display: block;
+}
+.afisha_logo img {
+  width: 500px;
+  border-radius: 15px;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+.afisha_description {
+
+  background-color: #DDF3AE;
+  padding: 25px;
+  border-radius: 15px;
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  h2 {
+    font-size: 3em;
+    margin-top: 0;
+    font-weight: bold;
+  }
+  p {
+    line-height: 1.5;
+  }
+
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 500px;
+  gap: 10px;
+
+}
+video {
+margin-bottom: 0;
+border-radius: 15px;
+}
+
+.button {
+  background-color: #EFEFEF;
+  outline: 0;
+  border: none;
+  font-size: 1.5em;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.participation {
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 3em;
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-size: 2em;
+  }
+}
+.party {
+  background-color: #FFFFFF;
+  background-image: url('../public/pictures/party.png');
+}
+
+.solo {
+  background-color: #F44D5F;
+  background-image: url('../public/pictures/solo.jpg');
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+footer {
+  background-color: #26272b;
+  color: #dedede;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  picture {
+    display: block;
+    width: 50px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.photos h2 {
+  font-size: 2.5em;
+}
+
+@media screen and (max-width: 1279px) {
+  .footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+}
