@@ -58,6 +58,7 @@ const observer = onChange(state, async (path, value) => {
   if (path === 'data') {
     try {
       await axios.post('send.php', state.data);
+
       observer.loading = false;
     } catch (e) {
       observer.loading = false;
@@ -83,14 +84,32 @@ sendForm.addEventListener('submit', (e) => {
   observer.currentButton = button;
   const inputData = new FormData(e.target);
   const phone = inputData.get('phone');
-  const email = inputData.get('email');
   const name = inputData.get('name');
   const surname = inputData.get('surname');
+  const eventType = inputData.get('event_type');
+
+  const str = `Новая запись на кроссатлон \n Имя: ${name}\n Фамилия:${surname}\n Телефон${phone}\n Формат участия: ${eventType} `;
 
   observer.loading = true;
   observer.data = {
-    data: {
-      phone, email, name, surname,
-    },
+    data: str,
   };
+});
+
+const scrollTo = (topValue = 0, bottomValue) => {
+  document.documentElement.scrollTo({
+    top: topValue,
+    bottom: bottomValue,
+    behavior: 'smooth',
+  });
+};
+
+const regButton = document.getElementById('register');
+
+regButton.addEventListener('click', () => {
+  const element = document.querySelector('.signup');
+  const position = element.getBoundingClientRect();
+  const osX = position.left;
+  const osY = position.top;
+  scrollTo(osY, osX);
 });

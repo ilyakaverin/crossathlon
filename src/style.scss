@@ -39,7 +39,7 @@ flex-wrap: wrap;
 }
 
 .afisha_logo {
-  width: 500px;
+  max-width: 500px;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
@@ -107,7 +107,9 @@ border-radius: 15px;
 }
 
 .button {
-  background-color: #EFEFEF;
+  background-color: #85FFBD;
+background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+
   outline: 0;
   border: none;
   font-size: 1.5em;
@@ -317,6 +319,15 @@ iframe {
     gap: 15px;
   }
 
+  #register {
+    max-width: 90%;
+    align-self: center;
+  }
+  .afisha_description, #afishavid {
+    max-width: 390px;
+    align-self: center;
+  }
+
   .signup {
 
     iframe {
@@ -363,4 +374,11 @@ iframe {
     align-items: center;
   }
 
+}
+
+
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }

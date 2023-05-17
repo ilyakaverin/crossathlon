@@ -5,7 +5,7 @@ $_POST = json_decode(file_get_contents("php://input"),true);
     {
         
         $data = [
-            "chat_id" => "41850257", 
+            "chat_id" => "6081187529", 
             "text" => $_POST['data']
         ];
         $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" . http_build_query($data) );    
