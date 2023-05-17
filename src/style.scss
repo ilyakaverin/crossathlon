@@ -39,7 +39,32 @@ flex-wrap: wrap;
 }
 
 .afisha_logo {
-  display: block;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  background-color: #26272b;
+  background-image: url('../public/pictures/log.png');
+  color: #dedede;
+  border-radius: 15px;
+  padding: 25px;
+
+  p {
+
+    &:nth-child(2) {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+    
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
 }
 .afisha_logo img {
   width: 500px;
@@ -161,11 +186,16 @@ footer {
   &_description {
     display: flex;
     gap: 15px;
+    margin-bottom: 50px;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+  }
   }
   
-  iframe {
-    border-radius: 15px;
-  }
 }
 
 section h2 {
@@ -240,16 +270,7 @@ justify-content: center;
 
 }
 
-.signup_description {
-  margin-bottom: 50px;
 
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-  }
-}
 
 form {
   display: flex;
@@ -270,10 +291,40 @@ form {
 
 }
 
-@media screen and (max-width: 1300px) {
+iframe {
+  border-radius: 15px;
+}
+
+.map {
+
+  position: relative;
+
+  span {
+    position: absolute;
+    top:250px;
+    left: 250px;
+    font-size: 1.5em;
+    background-color: #26272b;
+    color: #dedede;
+    padding: 25px;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .footer {
     flex-direction: column;
     gap: 15px;
+  }
+
+  .signup {
+
+    iframe {
+      display: none;
+    }
+    h2 {
+      text-align: center;
+    }
   }
   .signup_description {
     flex-wrap: wrap;
@@ -289,10 +340,27 @@ form {
     }
   }
   .afisha {
-    justify-content: center;
+   flex-direction: column;
+   align-items: center;
   }
   .participation {
     height: 500px;
+  }
+
+  .timer {
+    width: 500px;
+
+    p:after {
+      font-size: 0.1em;
+    }
+  }
+  .afisha_logo {
+    height: 800px;
+  }
+  .photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
 }

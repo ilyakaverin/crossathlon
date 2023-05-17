@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.scss" />
-    <script src="./script.js" defer></script>
+    <script src="./script.js" defer type="module"></script>
     <title>Crossathlon</title>
   </head>
   <body>
@@ -16,13 +16,27 @@
     </header>
     <main>
       <section class="content afisha">
-        <picture class="afisha_logo">
-          <img src="../public/pictures/pic1.jpg" alt="Crossathlon">
-        </picture>
+        <div class="afisha_logo">
+          <h2>CROSSATHLON - новый, интересный, разноплановый формат соревнований </h2>
+
+        <p>CROSSATHLON это</p>
+          <ul>
+            <li>🏊300 м. плавание на открытой воде</li>
+            <li>🏃‍♂️ 5 км. бег по лесной тропе</li>
+           <li>🏋️‍♂️ Функциональный кроссфит комплекс на площадке</li>
+          </ul>
+
+          <p>Цель мероприятия не приз или победа. Цель преодолеть все испытания и дойти до конца.</p>
+        </div>
         <section class="description">
           <div class="afisha_description">
-            <h2>Вставай, чемпион! Погнали!</h2>
-            <p>Crossathlon - крутой забег с препятствиями в твоем городе: драйв, поддержка и уверенность для каждого! Участники мероприятия преодолевают полосу препятствий, разработанную профессиональными инженерами и опытными инструкторами.</p>
+            <h2>Атмосфера, адреналин!</h2>
+            <p>    
+Новые знакомства с такими же безбашенными любителями гонок.
+            </p>
+            <p>Хочешь проверить на что ты способен и ради чего ходишь в спорт зал???
+              </p>
+              <p>Участвуй в CROSSATHLON!</p>
           </div>
           <video controls autoplay="true" loop>
             <source src="/public/pictures/afishavid.mp4" type="video/mp4">
@@ -78,20 +92,24 @@
               Маршрут мероприятия
             </div>
           </section>
-          <form action="">
+          <form id="sendForm" action="">
             <h2>Регистрация</h2>
-            <input type="text" placeholder="Имя" />
-            <input type="text" placeholder="Фамилия" />
-            <input type="email" placeholder="e-mail" />
-            <input type="text" placeholder="Телефон" />
-            <button class="button">Отправить</button>
+            <input type="text" name="name" placeholder="Имя" />
+            <input type="text" name="surname" placeholder="Фамилия" />
+            <input type="email" name="email" placeholder="e-mail" />
+            <input type="phone" name="phone" minlength="11" maxlength="11" placeholder="Телефон" />
+            <button class="button" type="submit">Отправить</button>
           </form>
         </section>
       </section>
+      <section class="content map">
+        <h2>Стартуем здесь!</h2>
+        <span>24 Июня 2023 г.</span>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae09f14836fa20cf81690e3c43d8b1aec20a2b5e7484b8cdb6f5bec85e1f5326e&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>      </section>
     </main>
     <footer>
       <section class="content footer">
-        <h2>Организовано "СК цех"</h2>
+        <h2>Организовано "СК цехЪ"</h2>
         <a href="https://vk.com/sktseh">
           <picture>
             <img src="/public/pictures/vk.svg" alt="vkontakte">

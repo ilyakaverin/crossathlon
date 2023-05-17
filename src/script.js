@@ -1,3 +1,6 @@
+import axios from 'axios';
+import onChange from 'on-change';
+
 setInterval(() => {
   const participation = document.querySelector('.participation');
   const text = document.querySelector('.participation p');
@@ -42,3 +45,52 @@ const myfunc = setInterval(() => {
     document.getElementById('end').innerHTML = 'TIME UP!!';
   }
 }, 1000);
+
+const sendForm = document.getElementById('sendForm');
+
+const state = {
+  loading: false,
+  data: null,
+  currentButton: null,
+};
+
+const observer = onChange(state, async (path, value) => {
+  if (path === 'data') {
+    try {
+      await axios.post('send.php', state.data);
+      observer.loading = false;
+    } catch (e) {
+      observer.loading = false;
+      console.log('check your network');
+    }
+  }
+
+  if (path === 'loading') {
+    switch (value) {
+      case true:
+        state.currentButton.textContent = 'Отправка';
+        state.currentButton.setAttribute('disabled', true);
+        break;
+      case false:
+        state.currentButton.textContent = 'Отправлено!';
+    }
+  }
+});
+
+sendForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const button = sendForm.querySelector('button');
+  observer.currentButton = button;
+  const inputData = new FormData(e.target);
+  const phone = inputData.get('phone');
+  const email = inputData.get('email');
+  const name = inputData.get('name');
+  const surname = inputData.get('surname');
+
+  observer.loading = true;
+  observer.data = {
+    data: {
+      phone, email, name, surname,
+    },
+  };
+});
