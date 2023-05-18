@@ -51,7 +51,6 @@ const sendForm = document.getElementById('sendForm');
 const state = {
   loading: false,
   data: null,
-  currentButton: null,
 };
 
 const observer = onChange(state, async (path, value) => {
@@ -107,7 +106,7 @@ const scrollTo = (topValue = 0, bottomValue) => {
 const regButton = document.getElementById('register');
 
 regButton.addEventListener('click', () => {
-  const element = document.querySelector('#sendForm');
+  const element = document.querySelector('.map');
   const position = element.getBoundingClientRect();
   const osX = position.left;
   const osY = position.top;

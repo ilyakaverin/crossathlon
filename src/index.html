@@ -106,16 +106,16 @@
           </section>
         </section>
       </section>
-      <section class="content"> 
+      <section class="content formRegister"> 
         <form id="sendForm" action="" >
           <h2>Регистрация</h2>
-          <input type="text" name="name" placeholder="Имя" />
-          <input type="text" name="surname" placeholder="Фамилия" />
-          <input type="phone" name="phone" minlength="11" maxlength="11" placeholder="Телефон" />
+          <input required type="text" name="name" placeholder="Имя" />
+          <input required type="text" name="surname" placeholder="Фамилия" />
+          <input required type="phone" name="phone" minlength="11" maxlength="11" placeholder="Телефон (без +)" />
           <div>
             <p>Формат участия</p>
             <div class="radio">
-              <input type="radio" id="solo" name="event_type" value="Индивидуально">
+              <input checked type="radio" id="solo" name="event_type" value="Индивидуально">
               <label for="solo">Индивидуально</label>
             </div>
           <div class="radio">
@@ -130,7 +130,12 @@
       </section>
       <section class="content map">
         <h2>Стартуем здесь!</h2>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae09f14836fa20cf81690e3c43d8b1aec20a2b5e7484b8cdb6f5bec85e1f5326e&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>      </section>
+        <iframe 
+        src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae09f14836fa20cf81690e3c43d8b1aec20a2b5e7484b8cdb6f5bec85e1f5326e&amp;source=constructor"
+         width="100%" 
+         height="400" 
+         frameborder="0"
+         ></iframe></section>
     </main>
     <footer>
       <section class="content footer">
