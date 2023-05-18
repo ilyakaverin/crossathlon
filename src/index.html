@@ -17,30 +17,35 @@
     <main>
       <section class="content afisha">
         <div class="afisha_logo">
-          <h2>CROSSATHLON - новый, интересный, разноплановый формат соревнований </h2>
-
-        <p>CROSSATHLON это</p>
-          <ul>
-            <li>🏊300 м. плавание на открытой воде</li>
-            <li>🏃‍♂️ 5 км. бег по лесной тропе</li>
-           <li>🏋️‍♂️ Функциональный кроссфит комплекс на площадке</li>
-          </ul>
-
-          <p>Цель мероприятия не приз или победа. Цель преодолеть все испытания и дойти до конца.</p>
+          <img src="../public/pictures/pic1.jpg" alt="Crossathlon">
         </div>
         <section class="description">
           <div class="afisha_description">
-            <h2>Атмосфера, адреналин!</h2>
+            <div>
+            <h2>Атмосфера! Адреналин!</h2>
+            <p>CROSSATLON - это  дистанция для любой степени подготовленности: новичок, любитель или профессионал.
+              </p>
+              <p>🏆Дистанцию не нужно будет проходить на время!
+                Основная задача дойти до конца и финишировать!</p>
+          </div>
+          <p>
+            Участникам предстоит испытать себя в трёх дисциплинах:
+          </p>
+              <ul>
+                <li>🏊Плавание на открытой воде, дистанция 300 м</li>
+                <li>🏃‍♂️Бег по сосновому лесу, дистанция 5 км</li>
+               <li>🏋️‍♂️Кроссфит комплекс на площадке</li>
+              </ul>
+              <div>
+              <p>Цель мероприятия не приз или победа. Цель преодолеть все испытания и дойти до конца.</p>
             <p>    
 Новые знакомства с такими же безбашенными любителями гонок.
             </p>
             <p>Хочешь проверить на что ты способен и ради чего ходишь в спорт зал???
               </p>
               <p>Участвуй в CROSSATHLON!</p>
+            </div>
           </div>
-          <video id="afishavid" controls autoplay="true" loop>
-            <source src="/public/pictures/afishavid.mp4" type="video/mp4">
-        </video>
         <button id="register" class="button">Принять участие</button>
         </section>
         <section class="participation solo">
@@ -51,32 +56,26 @@
 
       <section class="content photos">
         <h2>Фотографии с предыдущего мероприятия</h2>
-        <section class="section">
-          <div class="grid">
-            <div class="item">
-            </div>
-            <div class="item item--large">
-            </div>
-            <div class="item item--medium">
-            </div>
-            <div class="item item--large">
-            </div>
-            <div class="item item--full">
-            </div>
-            <div class="item item--medium">
-            </div>
-            <div class="item item--large none">
-            </div>
-            <div class="item">
-            </div>
-            </div>
+        <section >
+          <div class="grid_photos">
+            <img src="../public/pictures/pic3.png" alt="pic">
+            <img src="../public/pictures/pic4.png" alt="pic">
+            <img src="../public/pictures/pic6.png" alt="pic">
+            <img src="../public/pictures/pic7.png" alt="pic">
+            <img src="../public/pictures/pic8.png" alt="pic">
+            <img src="../public/pictures/pic9.png" alt="pic">
           </div>
-        </div>
+        <img src="../public/pictures/pic2.png" alt="pic" class="common">
       </section>
       <section class="content signup">
         <h2>Прими Участие!</h2>
         <section class="signup_description">
-          <iframe src="https://vk.com/video_ext.php?oid=-183320535&id=456239017&hash=f25c57b4e9874d28&hd=2" width="653" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
+          <iframe 
+          src="https://vk.com/video_ext.php?oid=-183320535&id=456239017&hash=f25c57b4e9874d28&hd=2" 
+          width="553" 
+          height="480" 
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" 
+          frameborder="0" allowfullscreen></iframe>
           <section>
             <div class="timer">
               <p id="days" class="timer_number"></p>
@@ -89,28 +88,48 @@
               <h2 id="end" class="timer_number"></h2>
             </div>
             <div class="route">
-              Маршрут мероприятия
+              Маршрут мероприятия скоро
             </div>
           </section>
-          <form id="sendForm" action="">
-            <h2>Регистрация</h2>
-            <input type="text" name="name" placeholder="Имя" />
-            <input type="text" name="surname" placeholder="Фамилия" />
-            <input type="phone" name="phone" minlength="11" maxlength="11" placeholder="Телефон" />
-            <div>
+          <section class="prizes">
+            <h3>Встречай обновлённый проект от спортивного клуба "Цехъ"  - CROSSATLON 2023!
+
+            </h3>
+              <p>Даже если ты никогда не участвовал в спортивных марафонах, но всегда хотел попробовать</p>
+            <ul>
+              <li>🥇 Все участники получат памятные жетоны!</li>
+              <li>🎁 Так же вас ждут крутые подарки от спонсоров!</li>
+              <li>💥 Зрителям и болельщикам вход свободный!</li>
+            </ul>
+            <p>💥Наша цель:  создать крутое сообщество людей, для которых спорт это стиль жизни, возможность зарядиться нашим вайбом и почувствовать адреналин!
+            </p>
+          </section>
+        </section>
+      </section>
+      <section class="content"> 
+        <form id="sendForm" action="" >
+          <h2>Регистрация</h2>
+          <input type="text" name="name" placeholder="Имя" />
+          <input type="text" name="surname" placeholder="Фамилия" />
+          <input type="phone" name="phone" minlength="11" maxlength="11" placeholder="Телефон" />
+          <div>
+            <p>Формат участия</p>
+            <div class="radio">
               <input type="radio" id="solo" name="event_type" value="Индивидуально">
               <label for="solo">Индивидуально</label>
-              <input type="radio" id="party" name="event_type" value="В команде">
-              <label for="party">В команде</label>
             </div>
+          <div class="radio">
+            <input type="radio" id="party" name="event_type" value="В команде">
+            <label for="party">В команде</label>
+          </div>
+          </div>
+  
+          <button class="button" type="submit">Отправить</button>
+        </form>
 
-            <button class="button" type="submit">Отправить</button>
-          </form>
-        </section>
       </section>
       <section class="content map">
         <h2>Стартуем здесь!</h2>
-        <span>24 Июня 2023 г.</span>
         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae09f14836fa20cf81690e3c43d8b1aec20a2b5e7484b8cdb6f5bec85e1f5326e&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>      </section>
     </main>
     <footer>

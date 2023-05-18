@@ -39,15 +39,12 @@ flex-wrap: wrap;
 }
 
 .afisha_logo {
-  max-width: 500px;
+  width: 500px;
   background-repeat: no-repeat;
-  background-position: center bottom;
   background-size: contain;
-  background-color: #26272b;
-  background-image: url('../public/pictures/log.png');
   color: #dedede;
+  background-position: center;
   border-radius: 15px;
-  padding: 25px;
 
   p {
 
@@ -58,16 +55,10 @@ flex-wrap: wrap;
     
   }
 
-  ul {
-    list-style: none;
 
-    li {
-      margin-bottom: 10px;
-    }
-  }
 }
 .afisha_logo img {
-  width: 500px;
+  width: 100%;
   border-radius: 15px;
 }
 
@@ -76,8 +67,11 @@ h1 {
 }
 
 .afisha_description {
-
-  background-color: #DDF3AE;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  background-color: #26272b;
+  color: #dedede;
   padding: 25px;
   border-radius: 15px;
   height: fit-content;
@@ -91,12 +85,19 @@ h1 {
   p {
     line-height: 1.5;
   }
+  ul {
+    list-style: none;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
 
 }
 .description {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  
   width: 500px;
   gap: 10px;
 
@@ -107,9 +108,8 @@ border-radius: 15px;
 }
 
 .button {
-  background-color: #85FFBD;
-background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-
+  background-color: #26272b;
+  color: #dedede;
   outline: 0;
   border: none;
   font-size: 1.5em;
@@ -261,8 +261,8 @@ section h2 {
 }
 
 .route {
-  background-color: #85FFBD;
-background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+  background-color: #26272b;
+  color: #dedede;
 border-radius: 15px;
 padding: 25px;
 height: 100%;
@@ -277,12 +277,17 @@ justify-content: center;
 form {
   display: flex;
   flex-direction: column;
-
-  background-color: #8EC5FC;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  align-items: center;
+  background-color: #26272b;
+  color: #dedede;
   border-radius: 15px;
   gap: 15px;
   padding: 15px;
+  margin-bottom: 25px;
+
+  .button {
+    margin-top: auto;
+  }
 
   input {
     padding: 5px;
@@ -297,21 +302,6 @@ iframe {
   border-radius: 15px;
 }
 
-.map {
-
-  position: relative;
-
-  span {
-    position: absolute;
-    top:250px;
-    left: 250px;
-    font-size: 1.5em;
-    background-color: #26272b;
-    color: #dedede;
-    padding: 25px;
-    border-radius: 15px;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .footer {
@@ -319,12 +309,16 @@ iframe {
     gap: 15px;
   }
 
+  form {
+    align-items: unset;
+  }
+
   #register {
     max-width: 90%;
     align-self: center;
   }
-  .afisha_description, #afishavid {
-    max-width: 390px;
+  .afisha_description, #afishavid,.description, .participation {
+    max-width: 350px;
     align-self: center;
   }
 
@@ -341,10 +335,11 @@ iframe {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+
+
   }
-  form {
-    flex-grow: 1;
-  }
+
+ 
   header {
     h1 {
       text-align: center;
@@ -359,26 +354,55 @@ iframe {
   }
 
   .timer {
-    width: 500px;
+    width: 390px;
 
-    p:after {
-      font-size: 0.1em;
+    #days {
+
+  
+      &::after {
+        font-size: 0.5em;
+  
+      }
+
+    }
+
+    #hours::after {
+      right: -10px;
     }
   }
   .afisha_logo {
-    height: 800px;
+    width: 350px;
+    
   }
   .photos {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    h2 {
+      text-align: center;
+    }
   }
 
 }
 
 
-@keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+.radio {
+  margin-top: 15px;
+}
+
+.prizes {
+  background-color: #26272b;
+  color: #dedede;
+  border-radius: 15px;
+  padding: 25px;
+  justify-content: space-around;
+
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+  }
 }
