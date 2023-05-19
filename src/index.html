@@ -9,6 +9,39 @@
     <title>Crossathlon</title>
   </head>
   <body>
+  
+  <div class="feedback">
+    <p>Есть вопросы?</p>
+    <a href="https://t.me/aArustamian"> <img src="../public/pictures/telegram.svg" alt="telegram"></a>
+    <a href="https://wa.me/79111449598"><img src="../public/pictures/whatsapp.svg" alt="whatsapp"></a>
+  </div>
+  <div class="modal">
+    <form id="modalSendForm" action="" >
+      <h2>Регистрация</h2>
+      <input required type="text" name="name" placeholder="Имя" />
+      <input required type="text" name="surname" placeholder="Фамилия" />
+      <input required type="phone" name="phone" minlength="11" maxlength="11" placeholder="Телефон (без +)" />
+      <div>
+        <p>Формат участия</p>
+        <div class="radio">
+          <input checked type="radio" id="solo" name="event_type" value="Индивидуально">
+          <label for="solo">Индивидуально</label>
+        </div>
+      <div class="radio">
+        <input type="radio" id="party" name="event_type" value="В команде">
+        <label for="party">В команде</label>
+      </div>
+      </div>
+
+      <div class="privacy_policy">
+        <input required type="checkbox" name="privacy_policy" id="privacy">
+        <label for="privacy_policy">Согласен с <a href="https://telegra.ph/Politika-obrabotki-personalnyh-dannyh-05-19">политикой</a> обработки персональных данных</label>
+      </div>
+
+      <button class="button" type="submit">Отправить</button>
+      <a class="button close">Закрыть</a>
+    </form>
+  </div>
     <header>
       <div class="content">
         <h1>Crossathlon</h1>
@@ -19,6 +52,7 @@
         <div class="afisha_logo">
           <img src="../public/pictures/pic1.jpg" alt="Crossathlon">
         </div>
+        <button id="register_mobile" class="button mobile content">Принять участие</button>
         <section class="description">
           <div class="afisha_description">
             <div>
@@ -46,13 +80,23 @@
               <p>Участвуй в CROSSATHLON!</p>
             </div>
           </div>
-        <button id="register" class="button">Принять участие</button>
+        <button id="register" class="button desktop">Принять участие</button>
         </section>
         <section class="participation solo">
           <h2>Участвуй!</h2>
           <p>Индивидуально!</p>
+          <p class="team hidden">Команда 5 человек</p>
+          <p class="price">1650 ₽</p>
         </section>
       </section>
+
+      <!-- <section class="content">
+        <div class="sliderContainer">
+          <img src="../public/pictures/slider1-min.png" alt="">
+          <img src="../public/pictures/slider2-min.jpg" alt="">
+          <img src="../public/pictures/slider3-min.jpg" alt="">
+        </div>
+      </section> -->
 
       <section class="content photos">
         <h2>Фотографии с предыдущего мероприятия</h2>
@@ -123,28 +167,37 @@
             <label for="party">В команде</label>
           </div>
           </div>
-  
+
+          <div class="privacy_policy">
+            <input required type="checkbox" name="privacy_policy" id="privacy">
+            <label for="privacy_policy">Согласен с <a href="https://telegra.ph/Politika-obrabotki-personalnyh-dannyh-05-19">политикой</a> обработки персональных данных</label>
+          </div>
           <button class="button" type="submit">Отправить</button>
         </form>
 
       </section>
       <section class="content map">
         <h2>Стартуем здесь!</h2>
-        <iframe 
-        src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae09f14836fa20cf81690e3c43d8b1aec20a2b5e7484b8cdb6f5bec85e1f5326e&amp;source=constructor"
-         width="100%" 
-         height="400" 
-         frameborder="0"
-         ></iframe></section>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1e7d908c353a970d35a22b90a47960c79fe7060cedc807726e9cb9c13c0017a2&amp;source=constructor" width="100%" height="580" frameborder="0"></iframe></section>
     </main>
     <footer>
       <section class="content footer">
-        <h2>Организовано "СК цехЪ"</h2>
-        <a href="https://vk.com/sktseh">
-          <picture>
-            <img src="/public/pictures/vk.svg" alt="vkontakte">
-          </picture>
-        </a>
+        <div>
+          <h2>Организовано <a href="https://tsehsport.taplink.ws/"> "СК цехЪ"</a></h2>
+          <span>+7 911 144 95 98</span>
+        </div>
+        <div class="social_media">
+          <a href="https://vk.com/sktseh">
+            <picture>
+              <img src="/public/pictures/vk.svg" alt="vkontakte">
+            </picture>
+          </a>
+          <a href="https://instagram.com/tseh_club">
+            <picture>
+              <img src="/public/pictures/instagram.svg" alt="instagram">
+            </picture>
+          </a>
+        </div>
       </section>
     </footer>
   </body>

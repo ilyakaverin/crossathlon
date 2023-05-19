@@ -4,15 +4,23 @@ import onChange from 'on-change';
 setInterval(() => {
   const participation = document.querySelector('.participation');
   const text = document.querySelector('.participation p');
+  const price = document.querySelector('.price');
+  const team = document.querySelector('.team');
 
   if (participation.classList.contains('solo')) {
     participation.classList.remove('solo');
     participation.classList.add('party');
     text.textContent = 'В команде!';
+    price.textContent = '1400 ₽';
+    team.classList.remove('hidden');
+    team.classList.add('opened');
   } else {
     participation.classList.remove('party');
     participation.classList.add('solo');
     text.textContent = 'Индивидуально!';
+    price.textContent = '1650 ₽';
+    team.classList.remove('opened');
+    team.classList.add('hidden');
   }
 }, 3000);
 
@@ -47,10 +55,12 @@ const myfunc = setInterval(() => {
 }, 1000);
 
 const sendForm = document.getElementById('sendForm');
+const modalSendForm = document.getElementById('modalSendForm');
 
 const state = {
   loading: false,
   data: null,
+  currentButton: null,
 };
 
 const observer = onChange(state, async (path, value) => {
@@ -77,38 +87,48 @@ const observer = onChange(state, async (path, value) => {
   }
 });
 
-sendForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const button = sendForm.querySelector('button');
-  observer.currentButton = button;
-  const inputData = new FormData(e.target);
-  const phone = inputData.get('phone');
-  const name = inputData.get('name');
-  const surname = inputData.get('surname');
-  const eventType = inputData.get('event_type');
+const modals = [sendForm, modalSendForm];
 
-  const str = `Новая запись на кроссатлон \n Имя: ${name}\n Фамилия:${surname}\n Телефон${phone}\n Формат участия: ${eventType} `;
+modals.forEach((modal) => {
+  modal.addEventListener('keydown', (event) => {
+    if (event.key === '+' || event.key === '-') {
+      event.preventDefault();
+    }
+  });
 
-  observer.loading = true;
-  observer.data = {
-    data: str,
-  };
+  modal.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const button = modal.querySelector('button');
+    observer.currentButton = button;
+    const inputData = new FormData(e.target);
+    const phone = inputData.get('phone');
+    const name = inputData.get('name');
+    const surname = inputData.get('surname');
+    const eventType = inputData.get('event_type');
+
+    const str = `Новая запись на кроссатлон \n Имя: ${name}\n Фамилия:${surname}\n Телефон${phone}\n Формат участия: ${eventType} `;
+
+    observer.loading = true;
+    observer.data = {
+      data: str,
+    };
+  });
 });
 
-const scrollTo = (topValue = 0, bottomValue) => {
-  document.documentElement.scrollTo({
-    top: topValue,
-    bottom: bottomValue,
-    behavior: 'smooth',
-  });
-};
-
 const regButton = document.getElementById('register');
+const regMobileButton = document.getElementById('register_mobile');
+const closeButton = document.querySelector('.close');
 
-regButton.addEventListener('click', () => {
-  const element = document.querySelector('.map');
-  const position = element.getBoundingClientRect();
-  const osX = position.left;
-  const osY = position.top;
-  scrollTo(osY, osX);
+const openModalButtons = [regButton, regMobileButton];
+
+openModalButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const element = document.querySelector('.modal');
+    element.classList.add('opened');
+  });
+});
+
+closeButton.addEventListener('click', () => {
+  const element = document.querySelector('.modal');
+  element.classList.remove('opened');
 });
