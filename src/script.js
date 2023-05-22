@@ -67,7 +67,6 @@ const observer = onChange(state, async (path, value) => {
   if (path === 'data') {
     try {
       await axios.post('send.php', state.data);
-
       observer.loading = false;
     } catch (e) {
       observer.loading = false;
@@ -89,9 +88,11 @@ const observer = onChange(state, async (path, value) => {
 
 const modals = [sendForm, modalSendForm];
 
+const forbidden = ['+', '-', ' '];
+
 modals.forEach((modal) => {
   modal.addEventListener('keydown', (event) => {
-    if (event.key === '+' || event.key === '-') {
+    if (forbidden.includes(event.key)) {
       event.preventDefault();
     }
   });
@@ -132,3 +133,4 @@ closeButton.addEventListener('click', () => {
   const element = document.querySelector('.modal');
   element.classList.remove('opened');
 });
+
