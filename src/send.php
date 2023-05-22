@@ -1,5 +1,5 @@
 <?php
-$apiToken = "5893870035:AAHKToNY3CPGf5k6_bNm2_h6IwEY0YT2FEw";
+$apiToken = "token";
 $_POST = json_decode(file_get_contents("php://input"),true);
     if(isset($_POST["data"]))
     {
