@@ -1,5 +1,6 @@
 import axios from 'axios';
 import onChange from 'on-change';
+import IMask from 'imask';
 
 setInterval(() => {
   const participation = document.querySelector('.participation');
@@ -66,7 +67,9 @@ const state = {
 const observer = onChange(state, async (path, value) => {
   if (path === 'data') {
     try {
-      await axios.post('send.php', state.data);
+      // await axios.post('send.php', state.data);
+
+      console.log(state)
       observer.loading = false;
     } catch (e) {
       observer.loading = false;
@@ -107,7 +110,7 @@ modals.forEach((modal) => {
     const surname = inputData.get('surname');
     const eventType = inputData.get('event_type');
 
-    const str = `Новая запись на кроссатлон \n Имя: ${name}\n Фамилия:${surname}\n Телефон${phone}\n Формат участия: ${eventType} `;
+    const str = `Новая запись на кроссатлон \n Имя: ${name}\n Фамилия:${surname}\n Телефон: ${phone}\n Формат участия: ${eventType} `;
 
     observer.loading = true;
     observer.data = {
@@ -134,3 +137,12 @@ closeButton.addEventListener('click', () => {
   element.classList.remove('opened');
 });
 
+const element = document.getElementById('modalPhone');
+const elementReg = document.getElementById('regPhone');
+
+const maskOptions = {
+  mask: '+{7}(000)000-00-00',
+};
+
+IMask(element, maskOptions);
+IMask(elementReg, maskOptions)

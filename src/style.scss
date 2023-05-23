@@ -351,6 +351,7 @@ iframe {
       -webkit-text-stroke: 2px black;
       text-stroke: 2px black;
       text-shadow: none;
+      font-family: 'Bebas', 'Roboto', sans-serif;
       
     }
 
@@ -377,6 +378,12 @@ iframe {
   .footer {
     flex-direction: column;
     gap: 15px;
+
+    div:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .sliderOuterContainer {
@@ -412,9 +419,16 @@ iframe {
     display: none;
   }
 
-  .map iframe {
-    width: 350px;
-    margin-bottom: 25px;
+  .map {
+
+    display: flex;
+    flex-direction: column;
+
+    iframe {
+      width: 350px;
+      margin-bottom: 25px;
+      align-self: center;
+    }
   }
   .afisha {
     margin-bottom: 25px;
